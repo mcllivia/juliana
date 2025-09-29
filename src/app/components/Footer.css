@@ -1,0 +1,28 @@
+.footer {
+    background-color: #2e7d32; /* verde SUS */
+    padding: 20px 0;
+    margin: 0; /* remove qualquer margem em cima */
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .footer-text {
+    color: #ffffff; /* texto branco */
+    font-size: 0.9rem;
+  }
+  
+  .footer-link {
+    color: #a5d6a7; /* verde claro */
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,0 +1,59 @@
+.topbar-appbar {
+    background-color: #2e7d32; /* verde padrão do MUI */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12);
+  }
+  
+  .topbar-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  .topbar-menu-btn {
+    color: white;
+  }
+  
+  .topbar-title {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #fff; /* título branco */
+  }
+  
+  .topbar-spacer {
+    flex-grow: 1; /* empurra os botões para a direita */
+  }
+  
+  .topbar-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+  }
+  
+  .topbar-link {
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: none;
+    font-weight: 500;
+    min-width: 0;
+    transition: color 0.2s ease;
+  }
+  
+  .topbar-link:hover {
+    color: #c8e6c9; /* verde bem claro no hover */
+  }
+  
+  @media (max-width: 640px) {
+    .topbar-nav {
+      display: none; /* esconde os links no celular */
+    }
+  
+    .topbar-title {
+      font-size: 1rem;
+    }
+  }
+  .topbar-appbar {
+    box-shadow: none; /* remove qualquer sombra extra */
+  }
+  

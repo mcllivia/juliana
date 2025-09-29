@@ -1,0 +1,60 @@
+.inicio-background {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+  
+  .inicio-container {
+    text-align: center;
+  }
+  
+  .inicio-title {
+    color: #1b5e20;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  
+  .inicio-subtitle {
+    margin-bottom: 32px;
+    color: #2e7d32;
+    line-height: 1.6;
+  }
+  
+  .inicio-button-box {
+    margin-bottom: 40px;
+  }
+  
+  .inicio-button {
+    text-transform: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .inicio-button:hover {
+    background-color: #1b5e20;
+  }
+  
+  .inicio-info-paper {
+    padding: 24px;
+    text-align: left;
+    border-radius: 12px;
+    background-color: #f1f8e9;
+  }
+  
+  .inicio-info-title {
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #2e7d32;
+  }
+  
+  .inicio-info-item {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #33691e;
+  }
+  
