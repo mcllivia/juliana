@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import './Noticias.css';
 
 const noticias = [
   {
