@@ -1,60 +1,323 @@
+/* Background e Container Principal */
 .inicio-background {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 60px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.inicio-container {
+  text-align: center;
+}
+
+/* Animação Zé Gotinha */
+.ze-gotinha-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.ze-gotinha-wrapper {
+  position: relative;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.ze-gotinha-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.ze-gotinha-indicator {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  animation: ping 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  .inicio-container {
-    text-align: center;
+  50% {
+    transform: translateY(-20px);
   }
-  
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Títulos */
+.inicio-title {
+  color: #1b5e20;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.inicio-subtitle {
+  margin-bottom: 40px;
+  color: #2e7d32;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Papers/Cards */
+.inicio-info-paper {
+  padding: 32px;
+  text-align: left;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inicio-info-paper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Caixa Principal - Destaque */
+.destaque-principal {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+  border-left: 8px solid #2e7d32;
+}
+
+/* Header dos Papers */
+.paper-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.icon-wrapper {
+  padding: 12px;
+  border-radius: 50%;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-shield {
+  background-color: #e8f5e9;
+}
+
+.icon-hospital {
+  background-color: #e3f2fd;
+}
+
+.header-icon {
+  width: 32px;
+  height: 32px;
+  color: #2e7d32;
+}
+
+.icon-hospital .header-icon {
+  color: #1976d2;
+}
+
+/* Títulos dos Papers */
+.inicio-info-title-main {
+  font-weight: 700;
+  color: #1b5e20;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.inicio-info-title {
+  font-weight: 600;
+  color: #2e7d32;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Texto Destaque */
+.texto-destaque {
+  margin-bottom: 32px;
+  line-height: 1.8;
+  color: #424242;
+  font-size: 1.1rem;
+}
+
+.texto-destaque strong {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+/* Grid de Benefícios */
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.beneficio-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f1f8e9;
+  padding: 16px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.beneficio-item:hover {
+  background-color: #dcedc8;
+}
+
+.checkmark {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 12px;
+  margin-top: 2px;
+}
+
+.beneficio-texto {
+  line-height: 1.6;
+  color: #424242;
+}
+
+.beneficio-texto strong {
+  color: #1b5e20;
+}
+
+/* Caixa SUS */
+.sus-info {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-top: 4px solid #1976d2;
+}
+
+.sus-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sus-item {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.6;
+  color: #424242;
+}
+
+.emoji-icon {
+  flex-shrink: 0;
+  font-size: 24px;
+  margin-right: 12px;
+  line-height: 1.6;
+}
+
+.inicio-info-item {
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: #424242;
+}
+
+.inicio-info-item strong {
+  font-weight: 700;
+  color: #1b5e20;
+  padding: 0 0.2em;
+}
+
+/* Call to Action */
+.call-to-action {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-text {
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-text:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(46, 125, 50, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .inicio-background {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .ze-gotinha-image {
+    width: 100px;
+    height: 100px;
+  }
+
   .inicio-title {
-    color: #1b5e20;
-    font-weight: 700;
-    margin-bottom: 16px;
+    font-size: 2rem;
   }
-  
-  .inicio-subtitle {
-    margin-bottom: 32px;
-    color: #2e7d32;
-    line-height: 1.6;
-  }
-  
-  .inicio-button-box {
-    margin-bottom: 40px;
-  }
-  
-  .inicio-button {
-    text-transform: none;
-    font-weight: 600;
-    padding: 10px 24px;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .inicio-button:hover {
-    background-color: #1b5e20;
-  }
-  
+
   .inicio-info-paper {
     padding: 24px;
-    text-align: left;
-    border-radius: 12px;
-    background-color: #f1f8e9;
   }
-  
+
+  .inicio-info-title-main,
   .inicio-info-title {
-    margin-bottom: 16px;
-    font-weight: 600;
-    color: #2e7d32;
+    font-size: 1.5rem;
   }
-  
-  .inicio-info-item {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: #33691e;
+
+  .texto-destaque {
+    font-size: 1rem;
   }
-  
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text {
+    padding: 16px 32px;
+    font-size: 1rem;
+  }
+}

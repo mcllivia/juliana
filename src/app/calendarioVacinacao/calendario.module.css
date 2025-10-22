@@ -1,0 +1,389 @@
+/* Container Principal */
+.calendarioWrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 25%, #a7f3d0 50%, #6ee7b7 75%, #34d399 100%);
+  padding: 48px 16px;
+}
+
+.calendarioMainContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.calendarioHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.calendarioIconContainer {
+  display: inline-block;
+  padding: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+}
+
+.calendarioIconContainer:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.calendarioIcon {
+  width: 64px;
+  height: 64px;
+  color: #059669;
+}
+
+.calendarioMainTitle {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #065f46;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(16, 185, 129, 0.2);
+  line-height: 1.2;
+}
+
+.calendarioSubtitleSus {
+  font-size: 1.5rem;
+  color: #047857;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.calendarioDescription {
+  font-size: 1.125rem;
+  color: #059669;
+  max-width: 768px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Filtros */
+.calendarioFiltros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.calendarioBtnFiltro {
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  color: #047857;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendarioBtnFiltro:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background: #ecfdf5;
+}
+
+.calendarioBtnFiltro.active {
+  background: linear-gradient(135deg, #059669, #0d9488);
+  color: white;
+  box-shadow: 0 8px 16px rgba(5, 150, 105, 0.4);
+  transform: scale(1.05);
+}
+
+.calendarioBtnFiltro.active:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
+/* Tabelas Container */
+.calendarioTabelasContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Card de Categoria */
+.calendarioCard {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.calendarioCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.calendarioCardHeader {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
+  padding: 24px;
+}
+
+.calendarioCategoriaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.calendarioEmoji {
+  font-size: 2.5rem;
+}
+
+/* Tabela */
+.calendarioTableWrapper {
+  overflow-x: auto;
+}
+
+.calendarioTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendarioTableHeadRow {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+}
+
+.calendarioTh {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #065f46;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #10b981;
+}
+
+.calendarioTbody {
+  background: white;
+}
+
+.calendarioTr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #d1fae5;
+}
+
+.calendarioTr:hover {
+  background: linear-gradient(90deg, #ecfdf5, #d1fae5);
+  transform: scale(1.01);
+}
+
+.calendarioTd {
+  padding: 16px 24px;
+  color: #047857;
+}
+
+.calendarioVacinaCell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.calendarioVacinaIcon {
+  font-size: 1.5rem;
+}
+
+.calendarioVacinaNome {
+  font-weight: 600;
+  color: #065f46;
+}
+
+.calendarioBadgeDoses {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+  color: #0f766e;
+  box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2);
+}
+
+.calendarioTdIdade {
+  font-weight: 600;
+  color: #047857;
+}
+
+.calendarioTdDoencas {
+  font-size: 0.875rem;
+  color: #059669;
+  line-height: 1.6;
+}
+
+/* Footer Informativo */
+.calendarioFooterInfo {
+  margin-top: 64px;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(5, 150, 105, 0.3);
+}
+
+.calendarioFooterContent {
+  text-align: center;
+  color: white;
+}
+
+.calendarioFooterTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.calendarioFooterText {
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.calendarioFooterLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  font-size: 0.875rem;
+}
+
+.calendarioFooterLinkItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendarioFooterEmoji {
+  font-size: 1.5rem;
+}
+
+/* Observações */
+.calendarioObservacoes {
+  margin-top: 32px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-left: 4px solid #f59e0b;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.calendarioObservacoesTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #92400e;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.calendarioObservacoesIcon {
+  font-size: 1.5rem;
+}
+
+.calendarioObservacoesLista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.calendarioObservacoesLista li {
+  display: flex;
+  gap: 12px;
+  color: #92400e;
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.calendarioObservacoesLista li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .calendarioWrapper {
+    padding: 32px 12px;
+  }
+
+  .calendarioMainTitle {
+    font-size: 2rem;
+  }
+
+  .calendarioSubtitleSus {
+    font-size: 1.125rem;
+  }
+
+  .calendarioDescription {
+    font-size: 1rem;
+  }
+
+  .calendarioCategoriaTitle {
+    font-size: 1.5rem;
+  }
+
+  .calendarioEmoji {
+    font-size: 2rem;
+  }
+
+  .calendarioTh,
+  .calendarioTd {
+    padding: 12px 16px;
+    font-size: 0.875rem;
+  }
+
+  .calendarioVacinaIcon {
+    font-size: 1.25rem;
+  }
+
+  .calendarioFooterLinks {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .calendarioBtnFiltro {
+    font-size: 0.875rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendarioMainTitle {
+    font-size: 1.75rem;
+  }
+
+  .calendarioIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .calendarioCardHeader {
+    padding: 16px;
+  }
+
+  .calendarioCategoriaTitle {
+    font-size: 1.25rem;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .calendarioTh,
+  .calendarioTd {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .calendarioVacinaCell {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

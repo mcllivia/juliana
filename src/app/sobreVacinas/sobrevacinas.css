@@ -1,79 +1,392 @@
-.sobre-vacina-container {
-  margin-top: 60px;
-  padding: 0 16px;
-  text-align: center;
+/* Background */
+.sobre-vacina-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Decoração de Vacina Animada */
+.vacina-decoracao {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.vacina-svg {
+  width: 100px;
+  height: 100px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.syringe-plunger {
+  animation: push 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.syringe-body {
+  animation: pulse-syringe 2s ease-in-out infinite;
+}
+
+.drop {
+  animation: dropFall 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.drop1 {
+  animation-delay: 0.5s;
+}
+
+.drop2 {
+  animation-delay: 0.7s;
+}
+
+.drop3 {
+  animation-delay: 0.9s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+@keyframes push {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes pulse-syringe {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes dropFall {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Container */
+.sobre-vacina-container {
+  padding: 0 24px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Títulos Principais */
 .sobre-vacina-title {
   color: #1b5e20;
   font-weight: 900;
-  margin-bottom: 12px;
-  text-shadow: 1px 1px 2px #c8e6c9;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(200, 230, 201, 0.5);
+  text-align: center;
 }
 
 .sobre-vacina-subtitle {
   color: #2e7d32;
-  margin-bottom: 40px;
-  line-height: 1.8;
+  margin-bottom: 56px;
+  line-height: 1.9;
   font-weight: 500;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 0 16px;
 }
 
+/* Cards/Papers */
 .sobre-vacina-paper {
-  padding: 24px 24px 32px 24px;
-  margin-bottom: 30px;
+  padding: 36px;
+  margin-bottom: 36px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
-  border-radius: 16px;
-  background: linear-gradient(145deg, #f1f8e9, #e8f5e9);
-  box-shadow: 0px 12px 24px rgba(0,0,0,0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f9fdf9);
+  box-shadow: 0px 8px 32px rgba(46, 125, 50, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border-left: 6px solid #4caf50;
+  max-width: 100%;
 }
 
 .sobre-vacina-paper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 16px 32px rgba(0,0,0,0.2);
+  transform: translateY(-8px);
+  box-shadow: 0px 16px 48px rgba(46, 125, 50, 0.25);
+  background: linear-gradient(145deg, #ffffff, #f1f8e9);
 }
 
+/* Header dos Cards */
 .sobre-vacina-header {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
+  gap: 18px;
+  margin-bottom: 20px;
+  justify-content: flex-start;
 }
 
 .sobre-vacina-icon {
   color: #2e7d32;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  padding: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.sobre-vacina-paper:hover .sobre-vacina-icon {
+  transform: rotate(360deg);
 }
 
 .sobre-vacina-section-title {
   font-weight: 700;
   color: #1b5e20;
+  margin: 0;
+  font-size: 1.6rem;
 }
 
+/* Texto Principal */
+.sobre-vacina-text {
+  margin-bottom: 28px;
+  line-height: 1.9;
+  color: #424242;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+/* Highlights/Destaques */
+.sobre-vacina-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+  background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: inset 0 2px 8px rgba(46, 125, 50, 0.1);
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform 0.2s ease;
+}
+
+.highlight-item:hover {
+  transform: translateX(8px);
+}
+
+.highlight-bullet {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  margin-top: 2px;
+}
+
+.highlight-text {
+  line-height: 1.7;
+  color: #2e7d32;
+  font-size: 0.98rem;
+  padding-top: 2px;
+  font-weight: 500;
+}
+
+/* Item Antigo (para compatibilidade) */
 .sobre-vacina-item {
   margin-bottom: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #33691e;
   font-size: 1rem;
 }
 
 .sobre-vacina-item strong {
   color: #1b5e20;
+  font-weight: 700;
 }
 
-@media (max-width: 600px) {
+/* Footer */
+.sobre-vacina-footer {
+  padding: 40px 32px;
+  text-align: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  color: white;
+  margin-top: 56px;
+  box-shadow: 0px 12px 32px rgba(27, 94, 32, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobre-vacina-footer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 16px 48px rgba(27, 94, 32, 0.4);
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.footer-text {
+  line-height: 1.8;
+  color: #e8f5e9;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sobre-vacina-background {
+    padding: 50px 0;
+  }
+
   .sobre-vacina-container {
-    margin-top: 40px;
-    padding: 0 12px;
+    padding: 0 16px;
   }
+
   .sobre-vacina-paper {
-    padding: 16px 12px 24px 12px;
+    padding: 28px 20px;
+    margin-bottom: 28px;
   }
+
   .sobre-vacina-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+
+  .sobre-vacina-subtitle {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
   .sobre-vacina-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    gap: 14px;
+  }
+
+  .sobre-vacina-icon {
+    padding: 12px;
+  }
+
+  .sobre-vacina-section-title {
+    font-size: 1.4rem;
+  }
+
+  .sobre-vacina-text {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .sobre-vacina-highlights {
+    padding: 20px;
+  }
+
+  .highlight-text {
+    font-size: 0.92rem;
+  }
+
+  .sobre-vacina-footer {
+    padding: 32px 24px;
+    margin-top: 40px;
+  }
+
+  .footer-title {
+    font-size: 1.3rem;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sobre-vacina-background {
+    padding: 40px 0;
+  }
+
+  .sobre-vacina-title {
+    font-size: 1.7rem;
+  }
+
+  .sobre-vacina-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .sobre-vacina-paper {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .sobre-vacina-header {
+    gap: 12px;
+  }
+
+  .sobre-vacina-icon {
+    padding: 10px;
+  }
+
+  .sobre-vacina-section-title {
+    font-size: 1.2rem;
+  }
+
+  .sobre-vacina-text {
+    font-size: 0.95rem;
+  }
+
+  .highlight-bullet {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .highlight-text {
+    font-size: 0.88rem;
+  }
+
+  .sobre-vacina-footer {
+    padding: 28px 20px;
   }
 }
