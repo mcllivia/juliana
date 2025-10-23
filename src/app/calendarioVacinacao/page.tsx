@@ -158,21 +158,19 @@ const CalendarioVacinacao = () => {
         <div className={styles.calendarioFooterInfo}>
           <div className={styles.calendarioFooterContent}>
             <h3 className={styles.calendarioFooterTitle}>💚 Vacinas salvam vidas!</h3>
-            <p className={styles.calendarioFooterText}>
-              Mantenha sua carteira de vacinação sempre atualizada. Todas as vacinas do Calendário Nacional estão disponíveis gratuitamente no SUS.
-            </p>
+           
             <div className={styles.calendarioFooterLinks}>
               <div className={styles.calendarioFooterLinkItem}>
-                <span className={styles.calendarioFooterEmoji}>🏥</span>
-                <span>Procure a UBS mais próxima</span>
+                <span className={styles.calendarioFooterEmoji}></span>
+              
               </div>
               <div className={styles.calendarioFooterLinkItem}>
-                <span className={styles.calendarioFooterEmoji}>📱</span>
-                <span>Baixe o app Conecte SUS</span>
+                <span className={styles.calendarioFooterEmoji}></span>
+              
               </div>
               <div className={styles.calendarioFooterLinkItem}>
-                <span className={styles.calendarioFooterEmoji}>🌐</span>
-                <span>saude.gov.br</span>
+                <span className={styles.calendarioFooterEmoji}></span>
+              
               </div>
             </div>
           </div>
