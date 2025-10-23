@@ -3,10 +3,24 @@
 import React, { useState } from 'react';
 import styles from './calendario.module.css';
 
-const CalendarioVacinacao = () => {
-  const [categoriaSelecionada, setCategoriaSelecionada] = useState('todas');
+type Categoria =
+  | 'Criança (0 a 9 anos)'
+  | 'Adolescente e Jovem (10 a 24 anos)'
+  | 'Adulto (25 a 59 anos)'
+  | 'Idoso (60+ anos)'
+  | 'Gestante';
 
-  const calendarioSUS = {
+interface Vacina {
+  vacina: string;
+  doses: string;
+  idade: string;
+  doencas: string;
+}
+
+const CalendarioVacinacao = () => {
+  const [categoriaSelecionada, setCategoriaSelecionada] = useState<'todas' | Categoria>('todas');
+
+  const calendarioSUS: Record<Categoria, Vacina[]> = {
     'Criança (0 a 9 anos)': [
       { vacina: 'BCG', doses: '1 dose', idade: 'Ao nascer', doencas: 'Formas graves de tuberculose e hanseníase' },
       { vacina: 'Hepatite B', doses: '1 dose', idade: 'Ao nascer', doencas: 'Hepatite B e hepatite D' },
@@ -34,42 +48,32 @@ const CalendarioVacinacao = () => {
       { vacina: 'dT', doses: '3 doses + reforço 10/10 anos', idade: '10 a 24 anos', doencas: 'Difteria, tétano' },
       { vacina: 'Febre Amarela', doses: '1 dose', idade: '10 a 24 anos', doencas: 'Febre amarela' },
       { vacina: 'Tríplice Viral (SCR)', doses: '2 doses', idade: '10 a 24 anos', doencas: 'Sarampo, caxumba, rubéola' },
-      { vacina: 'Pneumocócica 23-valente', doses: '2 doses (indígenas)', idade: '10 a 24 anos', doencas: 'Doenças pneumocócicas invasivas' },
-      { vacina: 'Varicela', doses: '2 doses (indígenas e trabalhadores)', idade: '10 a 24 anos', doencas: 'Varicela ou catapora' },
     ],
     'Adulto (25 a 59 anos)': [
       { vacina: 'Hepatite B', doses: '3 doses', idade: '25 a 59 anos', doencas: 'Hepatite B e hepatite D' },
       { vacina: 'dT', doses: '3 doses + reforço 10/10 anos', idade: '25 a 59 anos', doencas: 'Difteria, tétano' },
       { vacina: 'Febre Amarela', doses: '1 dose', idade: '25 a 59 anos', doencas: 'Febre amarela' },
       { vacina: 'Tríplice Viral (SCR)', doses: 'Até 29 anos: 2 doses | 30-59 anos: 1 dose', idade: '25 a 59 anos', doencas: 'Sarampo, caxumba, rubéola' },
-      { vacina: 'Pneumocócica 23-valente', doses: '2 doses (indígenas)', idade: '25 a 59 anos', doencas: 'Doenças pneumocócicas invasivas' },
-      { vacina: 'Varicela', doses: '2 doses (indígenas e trabalhadores)', idade: '25 a 59 anos', doencas: 'Varicela ou catapora' },
     ],
     'Idoso (60+ anos)': [
       { vacina: 'Hepatite B', doses: '3 doses', idade: 'A partir de 60 anos', doencas: 'Hepatite B e hepatite D' },
       { vacina: 'dT', doses: '3 doses + reforço 10/10 anos', idade: 'A partir de 60 anos', doencas: 'Difteria, tétano' },
       { vacina: 'Febre Amarela', doses: '1 dose (casos excepcionais)', idade: 'A partir de 60 anos', doencas: 'Febre amarela' },
       { vacina: 'Tríplice Viral (SCR)', doses: '2 doses (trabalhadores de saúde)', idade: 'A partir de 60 anos', doencas: 'Sarampo, caxumba, rubéola' },
-      { vacina: 'Pneumocócica 23-valente', doses: '2 doses (acamados/institucionalizados)', idade: 'A partir de 60 anos', doencas: 'Doenças pneumocócicas invasivas' },
-      { vacina: 'Varicela', doses: '2 doses (indígenas e trabalhadores)', idade: 'A partir de 60 anos', doencas: 'Varicela ou catapora' },
       { vacina: 'Influenza', doses: '1 dose anual', idade: 'A partir de 60 anos', doencas: 'Influenza (gripe)' },
-      { vacina: 'COVID-19', doses: '1 dose semestral', idade: 'A partir de 60 anos', doencas: 'Formas graves da COVID-19' },
     ],
     'Gestante': [
       { vacina: 'Hepatite B', doses: '3 doses', idade: 'Durante a gestação', doencas: 'Hepatite B e hepatite D' },
-      { vacina: 'dT', doses: '3 doses', idade: 'Durante a gestação', doencas: 'Difteria, tétano' },
       { vacina: 'dTpa', doses: '1 dose a partir da 20ª semana', idade: 'Cada gestação', doencas: 'Difteria, tétano, coqueluche' },
       { vacina: 'Influenza', doses: '1 dose por temporada', idade: 'Durante a gestação', doencas: 'Influenza (gripe)' },
-      { vacina: 'COVID-19', doses: '1 dose por gestação', idade: 'Durante a gestação', doencas: 'Formas graves da COVID-19' },
-      { vacina: 'Febre Amarela', doses: '1 dose (casos excepcionais)', idade: 'Durante a gestação', doencas: 'Febre amarela' },
     ],
   };
+  const categorias = ['todas', ...Object.keys(calendarioSUS) as Categoria[]];
 
-  const categorias = ['todas', ...Object.keys(calendarioSUS)];
-
-  const vacinasFiltradas = categoriaSelecionada === 'todas' 
-    ? Object.entries(calendarioSUS)
-    : [[categoriaSelecionada, calendarioSUS[categoriaSelecionada]]];
+  const vacinasFiltradas =
+    categoriaSelecionada === 'todas'
+      ? Object.entries(calendarioSUS)
+      : [[categoriaSelecionada, calendarioSUS[categoriaSelecionada]] as [Categoria, Vacina[]]];
 
   return (
     <div className={styles.calendarioWrapper}>
@@ -97,7 +101,7 @@ const CalendarioVacinacao = () => {
           {categorias.map((cat) => (
             <button
               key={cat}
-              onClick={() => setCategoriaSelecionada(cat)}
+              onClick={() => setCategoriaSelecionada(cat as 'todas' | Categoria)}
               className={`${styles.calendarioBtnFiltro} ${categoriaSelecionada === cat ? styles.active : ''}`}
             >
               {cat === 'todas' ? '📋 Todas as Faixas' : cat}
@@ -112,10 +116,10 @@ const CalendarioVacinacao = () => {
               <div className={styles.calendarioCardHeader}>
                 <h2 className={styles.calendarioCategoriaTitle}>
                   <span className={styles.calendarioEmoji}>
-                    {categoria.includes('Criança') ? '👶' : 
-                     categoria.includes('Adolescente') ? '🧒' :
-                     categoria.includes('Adulto') ? '🧑' :
-                     categoria.includes('Idoso') ? '👴' : '🤰'}
+                    {categoria.includes('Criança') ? '👶' :
+                      categoria.includes('Adolescente') ? '🧒' :
+                        categoria.includes('Adulto') ? '🧑' :
+                          categoria.includes('Idoso') ? '👴' : '🤰'}
                   </span>
                   {categoria}
                 </h2>
@@ -158,26 +162,26 @@ const CalendarioVacinacao = () => {
         <div className={styles.calendarioFooterInfo}>
           <div className={styles.calendarioFooterContent}>
             <h3 className={styles.calendarioFooterTitle}>💚 Vacinas salvam vidas!</h3>
-           
+
             <div className={styles.calendarioFooterLinks}>
               <div className={styles.calendarioFooterLinkItem}>
                 <span className={styles.calendarioFooterEmoji}></span>
-              
+
               </div>
               <div className={styles.calendarioFooterLinkItem}>
                 <span className={styles.calendarioFooterEmoji}></span>
-              
+
               </div>
               <div className={styles.calendarioFooterLinkItem}>
                 <span className={styles.calendarioFooterEmoji}></span>
-              
+
               </div>
             </div>
           </div>
         </div>
 
         {/* Observações importantes */}
-        
+
       </div>
     </div>
   );
