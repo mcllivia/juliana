@@ -1,58 +1,297 @@
+/* Background - FUNDO VERDE IGUAL À PÁGINA INICIAL */
+.mitos-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Garante que o body/root tenha o fundo verde */
+body {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+  min-height: 100vh;
+}
+
 .mitos-container {
-    margin-top: 60px;
-    padding: 0 16px;
-    text-align: center;
+  text-align: center;
+}
+
+/* Header */
+.mitos-header {
+  margin-bottom: 40px;
+}
+
+.mitos-header-icon {
+  font-size: 56px !important;
+  color: #2e7d32;
+  margin-bottom: 16px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .mitos-title {
-    color: #1b5e20;
-    font-weight: 900;
-    margin-bottom: 12px;
-    text-shadow: 1px 1px 2px #c8e6c9;
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
   }
-  
-  .mitos-subtitle {
-    color: #2e7d32;
+}
+
+/* Títulos - MESMA FONTE DA PÁGINA INICIAL */
+.mitos-title {
+  color: #1b5e20;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+  font-size: 2.5rem !important;
+}
+
+.mitos-subtitle {
+  color: #2e7d32;
+  font-weight: 400 !important;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 0 !important;
+}
+
+/* Caixa de Informação - ESTILO DA PÁGINA INICIAL */
+.mitos-info-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+  padding: 24px 32px;
+  border-radius: 16px;
+  border-left: 8px solid #2e7d32;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.mitos-info-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.mitos-info-box Typography {
+  color: #424242;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Cards de Mitos - VISUAL PREMIUM */
+.mitos-card {
+  padding: 0;
+  border-radius: 16px !important;
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mitos-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
+  border-color: #81c784;
+}
+
+/* Header do Card - Seção do Mito */
+.mitos-card-header {
+  padding: 28px;
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-bottom: 3px solid #ef5350;
+}
+
+.mito-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.mito-icon {
+  color: #d32f2f;
+  font-size: 36px !important;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.mito-content {
+  flex: 1;
+}
+
+.mito-chip {
+  background-color: #d32f2f !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  height: 24px !important;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.mito-text {
+  font-weight: 700 !important;
+  color: #c62828;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  font-size: 1.2rem !important;
+}
+
+/* Seção da Verdade */
+.verdade-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+.verdade-icon {
+  color: #2e7d32;
+  font-size: 36px !important;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.verdade-content {
+  flex: 1;
+}
+
+.verdade-chip {
+  background-color: #2e7d32 !important;
+  color: white !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  height: 24px !important;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.verdade-text {
+  font-weight: 500 !important;
+  color: #424242;
+  line-height: 1.8 !important;
+  margin: 0 !important;
+  font-size: 1.1rem !important;
+}
+
+/* Detalhes Sempre Visíveis - SEM BOTÃO SAIBA MAIS */
+.detalhes-section-fixa {
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+  border-top: 2px solid #fdd835;
+}
+
+.detalhes-texto {
+  color: #5d4037 !important;
+  line-height: 1.8 !important;
+  font-style: italic !important;
+  font-size: 1rem !important;
+}
+
+/* Footer - ESTILO DA PÁGINA INICIAL */
+.mitos-footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.mitos-footer-text {
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  color: white !important;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 24px rgba(46, 125, 50, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.mitos-footer-text:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(46, 125, 50, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .mitos-background {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .mitos-header {
     margin-bottom: 32px;
-    font-weight: 500;
   }
-  
-  .mitos-card {
-    padding: 20px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  .mitos-header-icon {
+    font-size: 48px !important;
   }
-  
-  .mitos-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+
+  .mitos-title {
+    font-size: 2rem !important;
   }
-  
+
+  .mitos-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .mitos-info-box {
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  .mitos-info-box Typography {
+    font-size: 1rem;
+  }
+
+  .mitos-card-header,
+  .verdade-section,
+  .detalhes-section-fixa {
+    padding: 24px 20px;
+  }
+
+  .mito-section,
+  .verdade-section {
+    gap: 12px;
+  }
+
+  .mito-icon,
+  .verdade-icon {
+    font-size: 32px !important;
+  }
+
   .mito-text {
-    font-weight: 700;
-    color: #c62828;
-    margin-bottom: 10px;
-    text-align: left;
+    font-size: 1.05rem !important;
   }
-  
+
   .verdade-text {
-    font-weight: 500;
-    color: #1b5e20;
-    text-align: left;
+    font-size: 0.95rem !important;
   }
-  
-  @media (max-width: 600px) {
-    .mitos-container {
-      margin-top: 40px;
-      padding: 0 12px;
-    }
-    .mitos-card {
-      padding: 16px;
-    }
-    .mito-text,
-    .verdade-text {
-      font-size: 0.95rem;
-    }
+
+  .detalhes-texto {
+    font-size: 0.9rem !important;
   }
-  
+
+  .mitos-footer-text {
+    padding: 16px 32px;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .mito-section,
+  .verdade-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mito-icon,
+  .verdade-icon {
+    margin-top: 0;
+  }
+}

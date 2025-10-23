@@ -1,64 +1,78 @@
+/* Fundo global da seção */
+.noticias-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f1f8e9, #e8f5e9);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+/* Container */
 .noticias-container {
-    margin-top: 60px;
-    padding: 0 16px;
-    text-align: center;
+  padding: 0 16px 60px;
+  text-align: center;
+}
+
+/* Título e subtítulo */
+.noticias-title {
+  color: #1b5e20;
+  font-weight: 900;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 2px #c8e6c9;
+}
+
+.noticias-subtitle {
+  color: #2e7d32;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+/* Cartão */
+.noticia-card {
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+  background: linear-gradient(135deg, #ffffff, #f1f8e9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.noticia-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto */
+.noticia-titulo {
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+
+.noticia-data {
+  font-size: 0.85rem;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.noticia-resumo {
+  color: #1b5e20;
+  margin-bottom: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .noticias-container {
+    padding: 0 12px 40px;
   }
-  
-  .noticias-title {
-    color: #1b5e20;
-    font-weight: 900;
-    margin-bottom: 12px;
-    text-shadow: 1px 1px 2px #c8e6c9;
-  }
-  
-  .noticias-subtitle {
-    color: #2e7d32;
-    margin-bottom: 32px;
-    font-weight: 500;
-  }
-  
+
   .noticia-card {
-    padding: 20px;
-    border-radius: 16px;
-    text-align: left;
-    background: linear-gradient(135deg, #f1f8e9, #e8f5e9);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 16px;
   }
-  
-  .noticia-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
-  }
-  
-  .noticia-titulo {
-    font-weight: 700;
-    color: #2e7d32;
-    margin-bottom: 6px;
-  }
-  
+
+  .noticia-titulo,
+  .noticia-resumo,
   .noticia-data {
-    font-size: 0.85rem;
-    color: #4caf50;
-    margin-bottom: 10px;
+    font-size: 0.95rem;
   }
-  
-  .noticia-resumo {
-    color: #1b5e20;
-    margin-bottom: 12px;
-  }
-  
-  @media (max-width: 600px) {
-    .noticias-container {
-      margin-top: 40px;
-      padding: 0 12px;
-    }
-    .noticia-card {
-      padding: 16px;
-    }
-    .noticia-titulo,
-    .noticia-resumo,
-    .noticia-data {
-      font-size: 0.95rem;
-    }
-  }
-  
+}
